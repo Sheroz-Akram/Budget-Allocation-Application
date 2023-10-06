@@ -1,12 +1,19 @@
-.topInfoBar{
+.topInfoBar {
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
-  justify-content: space-between;
 }
 
-.budgetAllocation, .RemainingBudget, .budgetSpent, .currencySelect{
+h2 {
+  font-weight: 400;
+}
+
+.budgetAllocation,
+.RemainingBudget,
+.budgetSpent,
+.currencySelect {
   width: 20%;
   height: 50px;
   display: flex;
@@ -17,18 +24,37 @@
   position: relative;
 }
 
-.budgetAllocation{
+.budgetAllocation {
   background-color: #E3E4E6;
 }
 
-.RemainingBudget{
+.RemainingBudget {
   background-color: #D2E8DE;
 }
 
-.budgetSpent{
+.budgetSpent {
   background-color: #D0E3FF;
 }
 
-.currencySelect{
+.currencySelect {
   background-color: #95E49A;
+}
+
+.selectOption {
+  width: 150px;
+  display: flex;
+  margin-right: 200px;
+}
+
+.selectOption h2 {
+  margin: 0px;
+  background-color: #E3E4E6;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.selectOption select {
+  font-size: 20px;
+  border: 1px solid black;
+  width: 100px;
 }

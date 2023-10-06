@@ -5,6 +5,7 @@ import RemainingBudget from './Components/RemainingBudget';
 import SpentBudget from './Components/SpentBudget';
 import './App.css';
 import SelectCurrency from './Components/SelectCurrency';
+import ChangeAllocation from './Components/ChangeAllocation';
 
 function App() {
 
@@ -14,12 +15,14 @@ function App() {
   return (
     <>
       <h1 style={{marginLeft: "40px"}}>Company's Budget Allocation</h1>
-      <div className='topInfoBar'>
+      <div className='topInfoBar' style={{justifyContent: "space-around"}}>
         <BudgetAllocation currency={currencyType} />
         <RemainingBudget currency={currencyType} />
         <SpentBudget currency={currencyType} />
         <SelectCurrency currency={currencyType} selectCurrency={setCurrencyType} />
       </div>
+      <h1 style={{marginLeft: "40px"}}>Change Allocation</h1>
+      <ChangeAllocation currency={currencyType} />
     </>
   );
 }
