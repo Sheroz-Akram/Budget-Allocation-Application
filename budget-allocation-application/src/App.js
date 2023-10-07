@@ -1,3 +1,4 @@
+// Import necessary components and styles
 import { useState } from 'react';
 import BudgetAllocation from './Components/BudgetAllocation';
 import RemainingBudget from './Components/RemainingBudget';
@@ -8,20 +9,14 @@ import ChangeAllocation from './Components/ChangeAllocation';
 import AllocationTable from './Components/AllocationTable';
 
 function App() {
+  // Define state variables using the useState hook
+  let [currencyType, setCurrencyType] = useState("£"); // Current currency type
+  let [allotedBudget, setAllotedBudget] = useState(100); // Total allocated budget
+  let [spentBudget, setSpentBudget] = useState(0); // Total spent budget
+  let [remainingBudget, setRemainingBudget] = useState(100); // Remaining budget
+  let [allocationTable, setAllocationTable] = useState([]); // Table for budget allocation details
 
-  // Set Our Variables
-  let [currencyType, setCurrencyType] = useState("£");
-  let [allotedBudget, setAllotedBudget] = useState(100);
-  let [spentBudget, setSpentBudget] = useState(0);
-  let [remainingBudget, setRemainingBudget] = useState(100);
-  let [allocationTable, setAllocationTable] = useState([
-    {
-      "Department": "Marketing",
-      "Budget": 0
-    }
-  ]);
-
-  // This Function will find the total Budget Spent
+  // Function to calculate the total budget spent
   let calculateTotalBudgetSpent = (budgetTable) => {
     let totalSpend = 0;
     budgetTable.forEach(element => {
@@ -31,6 +26,7 @@ function App() {
     setRemainingBudget(allotedBudget - totalSpend);
   }
 
+  // Function to handle changes in budget allocation
   let changeAllocation = (newTable) => {
     let myTable = [...newTable]
 
@@ -48,9 +44,9 @@ function App() {
       calculateTotalBudgetSpent(myTable);
       setAllocationTable(myTable);
     }
-
   }
 
+  // Function to handle changes in the allocated budget
   let allotBudget = (newBudget) => {
     if (newBudget < 0) {
       window.alert("Budget Can Be Negative");
@@ -61,20 +57,23 @@ function App() {
     else {
       setAllotedBudget(newBudget);
     }
-
   }
 
+  // Render the components and display budget-related information
   return (
     <>
       <h1 style={{ marginLeft: "40px" }}>Company's Budget Allocation</h1>
       <div className='topInfoBar' style={{ justifyContent: "space-around" }}>
+        {/* Display budget allocation, remaining budget, spent budget, and select currency */}
         <BudgetAllocation budget={allotedBudget} changeAllotBudget={allotBudget} currency={currencyType} />
         <RemainingBudget totalRemainingBudget={remainingBudget} currency={currencyType} />
         <SpentBudget totalSpendBudget={spentBudget} currency={currencyType} />
         <SelectCurrency currency={currencyType} selectCurrency={setCurrencyType} />
       </div>
+      {/* Display the allocation table */}
       <AllocationTable currency={currencyType} allocationTableSet={allocationTable} changeAllocationTable={changeAllocation} />
       <h1 style={{ marginLeft: "40px" }}>Change Allocation</h1>
+      {/* Display a component for changing budget allocation */}
       <ChangeAllocation currency={currencyType} allocationTableSet={allocationTable} changeAllocationTable={changeAllocation} />
     </>
   );
