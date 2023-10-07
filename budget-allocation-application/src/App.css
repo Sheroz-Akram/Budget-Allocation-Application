@@ -6,24 +6,31 @@
   display: flex;
 }
 
-.container{
+.container {
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
 }
 
-.container table{
+.container table {
   width: 100% !important;
 }
 
-.container table th h2{
+.container table th h2 {
   font-weight: bold !important;
 }
 
+.container table tr h2{
+  text-align: center;
+}
 
 
-.container th{
+.container th, .container td {
   width: 20%;
+}
+
+.container table td{
+  text-align: center;
 }
 
 h2 {
