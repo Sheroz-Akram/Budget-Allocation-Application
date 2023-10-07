@@ -41,6 +41,9 @@ function App() {
     if (allotedBudget < totalSpend) {
       window.alert("Hey, You are Out of Budget!");
     }
+    else if(totalSpend < 0){
+      window.alert("Spend Budget can't be Negative");
+    }
     else {
       calculateTotalBudgetSpent(myTable);
       setAllocationTable(myTable);
@@ -52,7 +55,7 @@ function App() {
     if (newBudget < 0) {
       window.alert("Budget Can Be Negative");
     }
-    if (newBudget < spentBudget) {
+    else if (newBudget < spentBudget) {
       window.alert("Budget can't be less than spent budget");
     }
     else {
@@ -72,7 +75,7 @@ function App() {
       </div>
       <AllocationTable currency={currencyType} allocationTableSet={allocationTable} changeAllocationTable={changeAllocation} />
       <h1 style={{ marginLeft: "40px" }}>Change Allocation</h1>
-      <ChangeAllocation currency={currencyType} />
+      <ChangeAllocation currency={currencyType} allocationTableSet={allocationTable} changeAllocationTable={changeAllocation} />
     </>
   );
 }
