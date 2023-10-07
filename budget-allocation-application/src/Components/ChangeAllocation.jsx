@@ -7,13 +7,19 @@ function ChangeAllocation(props) {
                 <h2>Department</h2>
                 <select name="" defaultValue="Choose Department" id="">
                     <option value="">Choose Department</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Human Resource">Human Resource</option>
+                    <option value="IT">IT</option>
                 </select>
             </div>
 
             <div className="selectOption">
                 <h2>Allocation</h2>
                 <select name="" defaultValue="Add" id="">
-                    <option value="">Add</option>
+                    <option value="Add">Add</option>
+                    <option value="Sub">Sub</option>
                 </select>
             </div>
 

@@ -6,6 +6,26 @@
   display: flex;
 }
 
+.container{
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.container table{
+  width: 100% !important;
+}
+
+.container table th h2{
+  font-weight: bold !important;
+}
+
+
+
+.container th{
+  width: 20%;
+}
+
 h2 {
   font-weight: 400;
 }

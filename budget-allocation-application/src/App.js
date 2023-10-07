@@ -6,6 +6,7 @@ import SpentBudget from './Components/SpentBudget';
 import './App.css';
 import SelectCurrency from './Components/SelectCurrency';
 import ChangeAllocation from './Components/ChangeAllocation';
+import AllocationTable from './Components/AllocationTable';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <SpentBudget currency={currencyType} />
         <SelectCurrency currency={currencyType} selectCurrency={setCurrencyType} />
       </div>
+      <AllocationTable />
       <h1 style={{marginLeft: "40px"}}>Change Allocation</h1>
       <ChangeAllocation currency={currencyType} />
     </>
